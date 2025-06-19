@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -44,7 +45,7 @@
     header {
       background-color: var(--light);
       padding: 1rem 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -87,7 +88,7 @@
       background: var(--light);
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .cancellation-header {
@@ -342,8 +343,13 @@
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     /* レスポンシブ */
@@ -386,6 +392,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- ヘッダー -->
   <header>
@@ -505,7 +512,8 @@
           <!-- 追加メッセージ -->
           <div class="form-group">
             <label for="additionalMessage">担当者への追加メッセージ（任意）</label>
-            <textarea id="additionalMessage" name="additionalMessage" placeholder="何かご質問やお伝えしたいことがあればお書きください"></textarea>
+            <textarea id="additionalMessage" name="additionalMessage"
+              placeholder="何かご質問やお伝えしたいことがあればお書きください"></textarea>
           </div>
 
           <!-- ボタン -->
@@ -551,12 +559,12 @@
   <script>
     // 理由選択のスタイル変更
     document.querySelectorAll('input[name="cancellationReason"]').forEach(radio => {
-      radio.addEventListener('change', function() {
+      radio.addEventListener('change', function () {
         // 全ての選択肢のスタイルをリセット
         document.querySelectorAll('.reason-option').forEach(option => {
           option.classList.remove('selected');
         });
-        
+
         // 選択された項目のスタイルを適用
         if (this.checked) {
           this.closest('.reason-option').classList.add('selected');
@@ -584,7 +592,7 @@
     // 解約申請を送信
     async function submitCancellation() {
       closeModal();
-      
+
       const form = document.getElementById('cancellationForm');
       const loading = document.getElementById('loading');
       const successMessage = document.getElementById('successMessage');
@@ -596,7 +604,7 @@
       // フォームデータを取得
       const formData = new FormData(form);
       const data = {};
-      
+
       // 基本データを整理
       for (let [key, value] of formData.entries()) {
         if (key === 'allowContact' || key === 'allowMarketing') {
@@ -635,8 +643,8 @@
 
       try {
         // GASのWebアプリURLを設定（新しいデプロイURL）
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycbxCxJZt8i_rU1Vqoi-jH-2Liznd4Odz8qBq9AX3E3xsill_pgCrUgghYRXYLF6hQnc3Fw/exec';
-        
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbzyuzGci-7L_S0ciLt1myrYW0YyDsxrTvatpttDmQy3_qYLKCSKaL8gsw5tpJeef30b3g/ex';
+
         const response = await fetch(GAS_URL, {
           method: 'POST',
           headers: {
@@ -651,11 +659,11 @@
           // 成功時の処理
           loading.style.display = 'none';
           successMessage.style.display = 'block';
-          
+
           // 受付番号を表示
           const applicationNumber = `CANCEL-${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, '0')}${String(new Date().getDate()).padStart(2, '0')}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`;
           document.getElementById('applicationNumber').textContent = applicationNumber;
-          
+
           // ページを上部にスクロール
           window.scrollTo(0, 0);
         } else {
@@ -670,7 +678,7 @@
     }
 
     // モーダル外クリックで閉じる
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       const modal = document.getElementById('confirmModal');
       if (event.target === modal) {
         closeModal();
@@ -678,11 +686,12 @@
     }
 
     // ESCキーでモーダルを閉じる
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
         closeModal();
       }
     });
   </script>
 </body>
-</html> 
+
+</html>

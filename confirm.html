@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -42,7 +43,7 @@
     header {
       background-color: var(--light);
       padding: 1rem 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -156,7 +157,7 @@
       background: var(--light);
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       margin-bottom: 2rem;
     }
 
@@ -235,7 +236,8 @@
       margin-bottom: 1rem;
     }
 
-    .agreement-content ol, .agreement-content ul {
+    .agreement-content ol,
+    .agreement-content ul {
       margin-left: 1.5rem;
       margin-bottom: 1rem;
     }
@@ -276,20 +278,20 @@
       cursor: pointer;
     }
 
-         .agreement-checkbox label {
-       cursor: pointer;
-       font-weight: 500;
-       color: var(--dark);
-     }
+    .agreement-checkbox label {
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--dark);
+    }
 
-     .agreement-checkbox input[type="checkbox"]:disabled + label {
-       color: var(--gray);
-       cursor: not-allowed;
-     }
+    .agreement-checkbox input[type="checkbox"]:disabled+label {
+      color: var(--gray);
+      cursor: not-allowed;
+    }
 
-     .agreement-checkbox input[type="checkbox"]:checked {
-       background: var(--primary);
-     }
+    .agreement-checkbox input[type="checkbox"]:checked {
+      background: var(--primary);
+    }
 
     /* ボタン */
     .button-container {
@@ -369,13 +371,13 @@
 
     /* ローディング */
     .loading {
-        display: none;
+      display: none;
       text-align: center;
       padding: 3rem;
       background: var(--light);
       border-radius: 16px;
       margin-top: 3rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       border: 2px solid var(--primary);
     }
 
@@ -390,16 +392,21 @@
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .loading p {
       color: var(--primary);
       font-size: 1.2rem;
       font-weight: 600;
-        margin: 0;
-      }
+      margin: 0;
+    }
 
     /* 成功メッセージ */
     .success-message {
@@ -409,7 +416,7 @@
       background: var(--light);
       border-radius: 16px;
       margin-top: 3rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       border: 2px solid #28a745;
     }
 
@@ -423,9 +430,11 @@
         transform: scale(0);
         opacity: 0;
       }
+
       50% {
         transform: scale(1.1);
       }
+
       100% {
         transform: scale(1);
         opacity: 1;
@@ -439,7 +448,7 @@
       font-weight: 700;
     }
 
-    .success-message > p {
+    .success-message>p {
       font-size: 1.1rem;
       color: var(--gray);
       margin-bottom: 2rem;
@@ -508,6 +517,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- ヘッダー -->
   <header>
@@ -544,7 +554,7 @@
       <div class="success-message" id="success-message">
         <h3>✅ 申し込み承認リンクを送信いたしました</h3>
         <p>ご登録いただいたメールアドレス宛に申し込み承認リンクをお送りしました。<br>
-        メール内のリンクをクリックして、オンボーディングを開始してください。</p>
+          メール内のリンクをクリックして、オンボーディングを開始してください。</p>
       </div>
 
       <!-- 記載内容確認 -->
@@ -590,26 +600,34 @@
           <div style="margin-top: 0.8rem; text-align: center;">
             <a href="#" class="btn-pdf" onclick="downloadTermsPDF()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
               利用規約ファイルダウンロード
             </a>
-        </div>
+          </div>
         </div>
         <div class="agreement-container">
           <div class="agreement-header">TeamBase & To Doアプリ 法人利用規約</div>
           <div class="agreement-content" id="terms-content">
             <div class="scroll-indicator" id="terms-indicator"></div>
-            <p>この利用規約（以下、「本規約」といいます。）は、アドネス株式会社（以下、「当社」といいます。）が提供するTeamBaseおよび関連アプリケーションTo Doアプリ（以下、総称して「本サービス」といいます。）の利用条件を定めるものです。本サービスを利用する法人または団体（以下、「契約者」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
+            <p>この利用規約（以下、「本規約」といいます。）は、アドネス株式会社（以下、「当社」といいます。）が提供するTeamBaseおよび関連アプリケーションTo
+              Doアプリ（以下、総称して「本サービス」といいます。）の利用条件を定めるものです。本サービスを利用する法人または団体（以下、「契約者」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
 
             <h2>第1条（適用）</h2>
             <ol>
               <li>本規約は、契約者と当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。</li>
-              <li>当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定め（以下、「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。</li>
+              <li>
+                当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定め（以下、「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。
+              </li>
               <li>本規約の規定と個別規定の規定が異なる場合には、個別規定の規定が優先して適用されるものとします。</li>
             </ol>
 
@@ -699,7 +717,9 @@
 
             <h2>第10条（免責事項）</h2>
             <ol>
-              <li>当社は、本サービスに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。</li>
+              <li>
+                当社は、本サービスに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。
+              </li>
               <li>当社は、本サービスによって契約者に生じた損害について、当社の故意または重過失による場合を除き、賠償する責任を負わないものとします。</li>
               <li>当社が損害賠償責任を負う場合であっても、その賠償額は、契約者が当社に支払った直近6ヶ月分の利用料金の総額を上限とします。</li>
             </ol>
@@ -725,7 +745,8 @@
               <li>本規約または本サービスに関して紛争が生じた場合には、大阪地方裁判所を第一審の専属的合意管轄裁判所とします。</li>
             </ol>
 
-            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); text-align: right; color: var(--gray);">
+            <p
+              style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); text-align: right; color: var(--gray);">
               2024年4月1日 制定<br>
               アドネス株式会社<br>
               〒540-0021<br>
@@ -748,24 +769,33 @@
           <div style="text-align: center;">
             <a href="#" class="btn-pdf" onclick="downloadPrivacyPDF()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
               プライバシーポリシーファイルダウンロード
             </a>
-        </div>
+          </div>
         </div>
         <div class="agreement-container">
           <div class="agreement-header">プライバシーポリシー</div>
           <div class="agreement-content" id="privacy-content">
             <div class="scroll-indicator" id="privacy-indicator"></div>
-            <p>アドネス株式会社（以下、「当社」といいます。）は、TeamBaseおよび関連アプリケーションTo Doアプリ（以下、総称して「本サービス」といいます。）における、法人のお客様（以下「契約者」といいます。）および契約者の従業員等の利用者（以下「利用者」といいます。）の個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
+            <p>アドネス株式会社（以下、「当社」といいます。）は、TeamBaseおよび関連アプリケーションTo
+              Doアプリ（以下、総称して「本サービス」といいます。）における、法人のお客様（以下「契約者」といいます。）および契約者の従業員等の利用者（以下「利用者」といいます。）の個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
+            </p>
 
             <h2>1. 個人情報の定義</h2>
-            <p>本ポリシーにおいて、個人情報とは、個人情報の保護に関する法律第2条第1項に定める「個人情報」を指し、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものを含みます。）、もしくは個人識別符号が含まれるものを指します。</p>
+            <p>
+              本ポリシーにおいて、個人情報とは、個人情報の保護に関する法律第2条第1項に定める「個人情報」を指し、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものを含みます。）、もしくは個人識別符号が含まれるものを指します。
+            </p>
 
             <h2>2. 収集する個人情報の種類</h2>
             <p>当社は、本サービスの提供にあたり、以下の個人情報を取得します：</p>
@@ -810,7 +840,8 @@
               <li>法令に基づく場合</li>
               <li>人の生命、身体または財産の保護のために必要がある場合であって、契約者の同意を得ることが困難である場合</li>
               <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、契約者の同意を得ることが困難である場合</li>
-              <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、契約者の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合</li>
+              <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、契約者の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合
+              </li>
             </ol>
 
             <h2>5. 個人情報の委託</h2>
@@ -835,7 +866,9 @@
             <p>契約者は、当社に対して、契約者本人または利用者の個人情報の開示、訂正、追加、削除、利用停止または消去を請求することができます。その際は、下記の問い合わせ窓口までご連絡ください。</p>
 
             <h2>8. Cookie（クッキー）等の使用</h2>
-            <p>本サービスでは、利便性の向上、利用状況の分析のために、Cookie等の技術を使用することがあります。契約者は、ブラウザの設定によりCookieの受け取りを拒否することができますが、その場合、本サービスの一部の機能が利用できなくなる可能性があります。</p>
+            <p>
+              本サービスでは、利便性の向上、利用状況の分析のために、Cookie等の技術を使用することがあります。契約者は、ブラウザの設定によりCookieの受け取りを拒否することができますが、その場合、本サービスの一部の機能が利用できなくなる可能性があります。
+            </p>
 
             <h2>9. 組織的な安全管理措置</h2>
             <p>当社は、個人情報の取扱いに関する責任者を設置し、個人情報の適正な管理を実施します。また、従業者に対する適切な監督を行います。</p>
@@ -846,7 +879,8 @@
             <h2>11. お問い合わせ窓口</h2>
             <p>本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。</p>
 
-            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); text-align: right; color: var(--gray);">
+            <p
+              style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); text-align: right; color: var(--gray);">
               2024年4月1日 制定<br>
               アドネス株式会社<br>
               〒540-0021<br>
@@ -854,7 +888,7 @@
               TEL: 06-4400-0754<br>
               お問い合わせ先：info.osaka@addness.co.jp
             </p>
-        </div>
+          </div>
         </div>
         <div class="agreement-checkbox" id="privacy-checkbox">
           <input type="checkbox" id="privacy-agree" disabled>
@@ -881,8 +915,8 @@
     <div class="container">
       <div class="success-icon">
         <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#28a745"/>
-          <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="10" fill="#28a745" />
+          <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
       <h3>申し込み承認リンクを送信しました！</h3>
@@ -910,7 +944,7 @@
   <!-- フッター -->
   <footer>
     <div class="container">
-        <p>© 2025 SL.AI Team Base. All Rights Reserved.</p>
+      <p>© 2025 SL.AI Team Base. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -931,39 +965,39 @@
       window.location.href = 'signup.html';
     }
 
-         // 入力内容を表示
-     function displayConfirmData() {
-       document.getElementById('company-name').textContent = signupData.company_name || '-';
-       document.getElementById('contact-name').textContent = signupData.name || '-';
-       document.getElementById('email').textContent = signupData.email || '-';
-       document.getElementById('phone').textContent = signupData.phone || '-';
-       document.getElementById('position').textContent = signupData.department || '-';
-       document.getElementById('employee-count').textContent = signupData.employee_count || '-';
-       document.getElementById('purpose').textContent = signupData.purpose || '-';
-     }
+    // 入力内容を表示
+    function displayConfirmData() {
+      document.getElementById('company-name').textContent = signupData.company_name || '-';
+      document.getElementById('contact-name').textContent = signupData.name || '-';
+      document.getElementById('email').textContent = signupData.email || '-';
+      document.getElementById('phone').textContent = signupData.phone || '-';
+      document.getElementById('position').textContent = signupData.department || '-';
+      document.getElementById('employee-count').textContent = signupData.employee_count || '-';
+      document.getElementById('purpose').textContent = signupData.purpose || '-';
+    }
 
     // スクロール監視機能
     function setupScrollTracking(contentId, indicatorId, checkboxId) {
       const content = document.getElementById(contentId);
       const indicator = document.getElementById(indicatorId);
       const checkbox = document.getElementById(checkboxId);
-      
-      content.addEventListener('scroll', function() {
+
+      content.addEventListener('scroll', function () {
         const scrollTop = content.scrollTop;
         const scrollHeight = content.scrollHeight;
         const clientHeight = content.clientHeight;
-        
+
         // スクロール進捗を計算
         const scrollProgress = (scrollTop + clientHeight) / scrollHeight;
-        
-                 // インジケーターの表示/非表示
-         if (scrollProgress >= 0.98) {
-           indicator.classList.add('hidden');
-           checkbox.disabled = false;
-           // 自動チェックは削除 - ユーザーが手動でチェックする
-         } else {
-           indicator.classList.remove('hidden');
-         }
+
+        // インジケーターの表示/非表示
+        if (scrollProgress >= 0.98) {
+          indicator.classList.add('hidden');
+          checkbox.disabled = false;
+          // 自動チェックは削除 - ユーザーが手動でチェックする
+        } else {
+          indicator.classList.remove('hidden');
+        }
       });
     }
 
@@ -972,7 +1006,7 @@
       const termsChecked = document.getElementById('terms-agree').checked;
       const privacyChecked = document.getElementById('privacy-agree').checked;
       const submitBtn = document.getElementById('submit-btn');
-      
+
       if (termsChecked && privacyChecked) {
         submitBtn.disabled = false;
       } else {
@@ -980,98 +1014,98 @@
       }
     }
 
-         // 申し込み送信機能
-     async function submitApplication() {
-       const loadingDiv = document.getElementById('loading');
-       const buttonContainer = document.getElementById('button-container');
-       const successMessage = document.getElementById('success-message');
-       
-       // ローディング表示
-       buttonContainer.style.display = 'none';
-       loadingDiv.style.display = 'block';
-       
-       try {
-         // GASのWebアプリURL
-         const GAS_URL = 'https://script.google.com/macros/s/AKfycbxCxJZt8i_rU1Vqoi-jH-2Liznd4Odz8qBq9AX3E3xsill_pgCrUgghYRXYLF6hQnc3Fw/exec';
-         
-         // 送信データを準備（サインアップフォーム用にマッピング）
-         const submitData = {
-           columnB: signupData.name,                           // 名前
-           columnC: signupData.email,                          // メールアドレス
-           columnD: signupData.phone,                          // 電話番号
-           columnE: signupData.department,                     // 部署名
-           columnF: signupData.employee_count,                 // 従業員数
-           columnG: signupData.purpose,                        // 導入目的
-           companyData: {
-             companyName: signupData.company_name,             // 会社名
-             applicationDate: new Date().toISOString(),        // 申し込み日時
-             status: 'トライアル申込完了',                        // ステータス
-             formType: '申し込み'                               // フォーム種別
-           }
-         };
-         
-         console.log('GASに送信するデータ:', submitData);
-         
-         // GASにデータを送信
-         const response = await fetch(GAS_URL, {
-           method: 'POST',
-           headers: {
-             'Content-Type': 'application/json',
-           },
-           body: JSON.stringify(submitData),
-           mode: 'no-cors' // CORS制限を回避
-         });
-         
-         console.log('GAS送信完了');
-         
-         // 成功時の処理
-         loadingDiv.style.display = 'none';
-         
-         // メールアドレスを動的に設定
-         const emailPlaceholder = successMessage.querySelector('strong');
-         if (emailPlaceholder && emailPlaceholder.textContent.includes('{{')) {
-           emailPlaceholder.textContent = signupData.email;
-         }
-         
-         successMessage.style.display = 'block';
-         
-         // 申し込み完了データをセッションに保存
-         sessionStorage.setItem('applicationSent', 'true');
-         sessionStorage.setItem('applicationData', JSON.stringify({
-           ...signupData,
-           applicationDate: new Date().toISOString(),
-           status: 'トライアル申込完了',
-           gasSubmitted: true
-         }));
-         
-         // カウントダウンタイマーを開始
-         let countdown = 5;
-         const redirectNotice = successMessage.querySelector('.redirect-notice');
-         
-         const timer = setInterval(() => {
-           countdown--;
-           redirectNotice.textContent = `${countdown}秒後に自動的にオンボーディングページへ移動します...`;
-           
-           if (countdown <= 0) {
-             clearInterval(timer);
-             window.location.href = 'onboarding.html';
-           }
-         }, 1000);
-         
-       } catch (error) {
-         // エラー時の処理
-         console.error('GAS送信エラー:', error);
-         loadingDiv.style.display = 'none';
-         buttonContainer.style.display = 'flex';
-         alert('申し込み送信中にエラーが発生しました。しばらく時間をおいて再度お試しください。\n\nエラー詳細: ' + error.message);
-       }
-     }
+    // 申し込み送信機能
+    async function submitApplication() {
+      const loadingDiv = document.getElementById('loading');
+      const buttonContainer = document.getElementById('button-container');
+      const successMessage = document.getElementById('success-message');
+
+      // ローディング表示
+      buttonContainer.style.display = 'none';
+      loadingDiv.style.display = 'block';
+
+      try {
+        // GASのWebアプリURL
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbya2l_7HAtRepTUAQqz1WKFfc90XcoDzW6FQnKw7-16YLE0gETJffq1A3wPxf1BswDDLA/exec';
+
+        // 送信データを準備（サインアップフォーム用にマッピング）
+        const submitData = {
+          columnB: signupData.name,                           // 名前
+          columnC: signupData.email,                          // メールアドレス
+          columnD: signupData.phone,                          // 電話番号
+          columnE: signupData.department,                     // 部署名
+          columnF: signupData.employee_count,                 // 従業員数
+          columnG: signupData.purpose,                        // 導入目的
+          companyData: {
+            companyName: signupData.company_name,             // 会社名
+            applicationDate: new Date().toISOString(),        // 申し込み日時
+            status: 'トライアル申込完了',                        // ステータス
+            formType: '申し込み'                               // フォーム種別
+          }
+        };
+
+        console.log('GASに送信するデータ:', submitData);
+
+        // GASにデータを送信
+        const response = await fetch(GAS_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(submitData),
+          mode: 'no-cors' // CORS制限を回避
+        });
+
+        console.log('GAS送信完了');
+
+        // 成功時の処理
+        loadingDiv.style.display = 'none';
+
+        // メールアドレスを動的に設定
+        const emailPlaceholder = successMessage.querySelector('strong');
+        if (emailPlaceholder && emailPlaceholder.textContent.includes('{{')) {
+          emailPlaceholder.textContent = signupData.email;
+        }
+
+        successMessage.style.display = 'block';
+
+        // 申し込み完了データをセッションに保存
+        sessionStorage.setItem('applicationSent', 'true');
+        sessionStorage.setItem('applicationData', JSON.stringify({
+          ...signupData,
+          applicationDate: new Date().toISOString(),
+          status: 'トライアル申込完了',
+          gasSubmitted: true
+        }));
+
+        // カウントダウンタイマーを開始
+        let countdown = 5;
+        const redirectNotice = successMessage.querySelector('.redirect-notice');
+
+        const timer = setInterval(() => {
+          countdown--;
+          redirectNotice.textContent = `${countdown}秒後に自動的にオンボーディングページへ移動します...`;
+
+          if (countdown <= 0) {
+            clearInterval(timer);
+            window.location.href = 'onboarding.html';
+          }
+        }, 1000);
+
+      } catch (error) {
+        // エラー時の処理
+        console.error('GAS送信エラー:', error);
+        loadingDiv.style.display = 'none';
+        buttonContainer.style.display = 'flex';
+        alert('申し込み送信中にエラーが発生しました。しばらく時間をおいて再度お試しください。\n\nエラー詳細: ' + error.message);
+      }
+    }
 
     // PDFダウンロード機能
     function downloadTermsPDF() {
       const termsContent = document.getElementById('terms-content').innerText;
       const signupData = JSON.parse(sessionStorage.getItem('signupData')) || {};
-      
+
       const pdf = `
 TeamBase & To Doアプリ 法人利用規約
 
@@ -1082,22 +1116,22 @@ ${termsContent}
 
 ※ この文書は ${new Date().toLocaleDateString('ja-JP')} にダウンロードされた利用規約の記録です。
 `;
-      
+
       const blob = new Blob([pdf], { type: 'text/plain;charset=utf-8' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `TeamBase_利用規約_${signupData.company_name || 'Company'}_${new Date().toISOString().split('T')[0]}.txt`;
+      a.download = `TeamBase_利用規約_${new Date().toISOString().split('T')[0]}.txt`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     }
-    
+
     function downloadPrivacyPDF() {
       const privacyContent = document.getElementById('privacy-content').innerText;
       const signupData = JSON.parse(sessionStorage.getItem('signupData')) || {};
-      
+
       const pdf = `
 TeamBase & To Doアプリ プライバシーポリシー
 
@@ -1108,12 +1142,12 @@ ${privacyContent}
 
 ※ この文書は ${new Date().toLocaleDateString('ja-JP')} にダウンロードされたプライバシーポリシーの記録です。
 `;
-      
+
       const blob = new Blob([pdf], { type: 'text/plain;charset=utf-8' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `TeamBase_プライバシーポリシー_${signupData.company_name || 'Company'}_${new Date().toISOString().split('T')[0]}.txt`;
+      a.download = `TeamBase_プライバシーポリシー_${new Date().toISOString().split('T')[0]}.txt`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -1121,17 +1155,18 @@ ${privacyContent}
     }
 
     // 初期化
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       displayConfirmData();
-      
+
       // スクロール監視を設定
       setupScrollTracking('terms-content', 'terms-indicator', 'terms-agree');
       setupScrollTracking('privacy-content', 'privacy-indicator', 'privacy-agree');
-      
+
       // チェックボックスのイベントリスナー
       document.getElementById('terms-agree').addEventListener('change', checkSubmitButton);
       document.getElementById('privacy-agree').addEventListener('change', checkSubmitButton);
     });
   </script>
 </body>
-</html> 
+
+</html>
