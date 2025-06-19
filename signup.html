@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>SL.AI Team Base - 無料トライアル申し込み</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    :root {
+      --primary: #4A6FFF;
+      --secondary: #F5F7FF;
+      --accent: #FF6B6B;
+      --dark: #333;
+      --light: #fff;
+      --gray: #666;
+      --light-gray: #F8F9FA;
+      --max-width: 800px;
+      --gradient-primary: linear-gradient(135deg, #4A6FFF 0%, #6B8AFF 100%);
+      --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--secondary);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: var(--light);
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-decoration: none;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .header-link {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .header-link:hover {
+      color: var(--primary);
+      background: var(--secondary);
+    }
+
+    .header-link.cancellation {
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .header-link.cancellation:hover {
+      background: var(--accent);
+      color: var(--light);
+    }
+
+    /* メインコンテンツ */
+    .signup-section {
+      padding: 4rem 0;
+      min-height: calc(100vh - 180px);
+    }
+
+    .signup-container {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .signup-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .signup-header h1 {
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .signup-header p {
+      color: var(--gray);
+    }
+
+    /* ステップインジケーター */
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .step-indicator::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--light-gray);
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .step {
+      position: relative;
+      z-index: 2;
+      background: var(--light);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .step.active {
+      background: var(--primary);
+      color: var(--light);
+    }
+
+    .step-label {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 0.5rem;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* フォーム */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid var(--light-gray);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .required::after {
+      content: '*';
+      color: var(--accent);
+      margin-left: 4px;
+    }
+
+    /* ボタン */
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--light);
+    }
+
+    .btn-secondary {
+      background: var(--light);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* フッター */
+    footer {
+      background-color: var(--light);
+      padding: 1rem 0;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* レスポンシブデザイン */
+    @media (max-width: 768px) {
+      .signup-container {
+        padding: 1.5rem;
+      }
+
+      .signup-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .step-indicator {
+        margin-bottom: 2rem;
+      }
+
+      .button-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="logo">SL.AI Team Base</a>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <section class="signup-section">
+    <div class="container">
+      <div class="signup-container">
+        <div class="signup-header">
+          <h1>無料トライアル申し込み</h1>
+          <p>必要事項を入力して、TeamBaseを始めましょう</p>
+        </div>
+
+        <div class="step-indicator">
+          <div class="step active">
+            1
+            <span class="step-label">会社情報入力</span>
+          </div>
+          <div class="step">
+            2
+            <span class="step-label">プラン選択</span>
+          </div>
+          <div class="step">
+            3
+            <span class="step-label">申し込み完了</span>
+          </div>
+        </div>
+
+        <form id="signupForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="required">会社名</label>
+            <input type="text" id="company_name" name="company_name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required">部署名</label>
+            <input type="text" id="department" name="department" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required">お名前</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required">電話番号</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required">従業員数</label>
+            <select id="employee_count" name="employee_count" required>
+              <option value="">選択してください</option>
+              <option value="1-5">1-5名</option>
+              <option value="6-20">6-20名</option>
+              <option value="21-50">21-50名</option>
+              <option value="51-100">51-100名</option>
+              <option value="101+">101名以上</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="required">導入目的</label>
+            <textarea id="purpose" name="purpose" rows="4" required></textarea>
+          </div>
+
+          <div class="button-container">
+            <button type="button" class="btn btn-secondary" onclick="history.back()">戻る</button>
+            <button type="submit" class="btn btn-primary">申し込む</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <p>© 2025 SL.AI Team Base. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    // AOS初期化
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      console.log('フォーム送信開始');
+      
+      const formData = {
+        company_name: document.getElementById('company_name').value,
+        department: document.getElementById('department').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        employee_count: document.getElementById('employee_count').value,
+        purpose: document.getElementById('purpose').value
+      };
+
+      console.log('送信データ:', formData);
+
+      try {
+        // フォームデータをセッションストレージに保存
+          sessionStorage.setItem('signupData', JSON.stringify(formData));
+          
+          // 確認ページへ遷移
+          window.location.href = 'confirm.html';
+      } catch (error) {
+        console.error('Error:', error);
+        alert('エラーが発生しました。もう一度お試しください。');
+      }
+    }
+  </script>
+</body>
+</html> 
